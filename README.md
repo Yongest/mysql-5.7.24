@@ -24,6 +24,10 @@ datadir = D:/mysql-5.7.24/data
 9.停止mysql  :        mysqladmin -uroot -p  shutdown
 
 10.ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost' (10061)   mysql没有启动
+
+###踩过的坑
+使用 mysql -uroot -p 的时候，在win7中需要输入密码，为了安全性，系统生成一个随机密码，需要找到这个密码。
+[https://blog.csdn.net/hua1011161696/article/details/80666025](https://blog.csdn.net/hua1011161696/article/details/80666025 "点我呀（解决坑的办法）")
 ###关键字解释
 1.database:关联表的集合      
 2. table :表是数据的矩阵        
@@ -40,7 +44,21 @@ datadir = D:/mysql-5.7.24/data
 3. 以分号结尾;   修改结尾符号 delimiter //   
   
 ##数据类型
-![](https://i.imgur.com/hv0Pvgg.png)
-
+![](https://i.imgur.com/sQEbiM5.png)
 
 ![](https://i.imgur.com/n9qHkIH.png)
+
+![](https://i.imgur.com/8P37Oz7.png)
+
+![](https://i.imgur.com/AlnjpCa.png)
+
+![](https://i.imgur.com/w2883BK.png)
+![](https://i.imgur.com/luZSIiL.png)
+![](https://i.imgur.com/HVPOHLD.png)
+![](https://i.imgur.com/ZDHX6hk.png)
+![](https://i.imgur.com/Vq6FJgD.png)
+
+![](https://i.imgur.com/7D3e0Pb.png)
+
+![](https://i.imgur.com/lyaOOZ7.png)
+
