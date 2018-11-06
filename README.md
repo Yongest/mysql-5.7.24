@@ -62,3 +62,10 @@ datadir = D:/mysql-5.7.24/data
 
 ![](https://i.imgur.com/lyaOOZ7.png)
 
+###查看系统数据库密码等
+ 1.use mysql
+
+ 2.select user,host,authentication_string from user;
+
+3.create user 'blog'@'%' identified by '123';  //创建用户。
+![](https://i.imgur.com/bKnwbPs.png)
