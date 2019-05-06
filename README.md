@@ -2,12 +2,9 @@
 
 1.在目录下新建 data目录，新建my.ini 文件
 2.在 my.ini 中 写入
-
-```
-[mysqld]
-basedir = D:/mysql-5.7.24
-datadir = D:/mysql-5.7.24/data
-```
+	[mysqld]
+	basedir = D:/mysql-5.7.24
+	datadir = D:/mysql-5.7.24/data
 
 3.在cmd中执行D:\mysql-5.7.24\bin\msqld.exe --initialize-insecure   初始化数据库
 
@@ -25,11 +22,11 @@ datadir = D:/mysql-5.7.24/data
 
 10.ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost' (10061)   mysql没有启动
 
-###踩过的坑
+### 踩过的坑
 使用 mysql -uroot -p 的时候，在win7中需要输入密码，为了安全性，系统生成一个随机密码，需要找到这个密码。
 [https://blog.csdn.net/hua1011161696/article/details/80666025](https://blog.csdn.net/hua1011161696/article/details/80666025 "点我呀（解决坑的办法）")
-###关键字解释
-1.database:关联表的集合      
+### 关键字解释
+1. database:关联表的集合      
 2. table :表是数据的矩阵        
 3. coloumn:列/字段，包含相同的数据，字段类型
 4. row:行（元组，记录），一组相关的数据    
@@ -38,12 +35,12 @@ datadir = D:/mysql-5.7.24/data
 
 #### sql(Structured Query Language) 结构化查询语言，是用于访问和处理数据库的标准计算机语言
 
-###SQL 规则：
+### SQL 规则：
 1. 必须语句大写，在命令行可以小写
 2. 注释：#   或则 -- 加空格   例如 -- show databases;  多行注释  /**/ 
 3. 以分号结尾;   修改结尾符号 delimiter //   
   
-##数据类型
+## 数据类型
 ![](https://i.imgur.com/sQEbiM5.png)
 
 ![](https://i.imgur.com/n9qHkIH.png)
@@ -62,10 +59,45 @@ datadir = D:/mysql-5.7.24/data
 
 ![](https://i.imgur.com/lyaOOZ7.png)
 
-###查看系统数据库密码等
+### 查看系统数据库密码等
  1.use mysql
 
  2.select user,host,authentication_string from user;
 
 3.create user 'blog'@'%' identified by '123';  //创建用户。
 ![](https://i.imgur.com/bKnwbPs.png)
+
+
+#### 数据库相关操作
+	show databases;  // 显示数据库；
+	creacte shop;  //
+	use shop;  //使用shop数据库
+	drop database shop; //删除shop 数据库
+
+#### 表的相关操作
+	use shop;  //需要先进入到某个数据库,切换数据
+	// 创建表
+	create table user(
+	id int unsigned auto_increment not null primary key comment '用户id',
+	user_name varchar(20) not null default 'admin',
+	password char(32) not null comment '用户密码'
+	);  //所有字段都加上not null 潜规则
+	
+	show tables; //查看所有表；
+	desc user; //查看表结构；
+	show create table user; // 查看创建表user当时的代码。表名，字段名 加了反引号 关键字大写啦（代码里面都是大写）；
+	ALTER TABLE user RENAME users;  //表名不合适，更改表名；
+	//突然发现少了字段
+	ALTER TABLE users ADD email varchar(50) not null comment '用户邮箱';
+	//想添加个字段到email 前面
+	ALTER TABLE users ADD mobile char(11) not null AFTER password;
+	// 发现email 数据长度太大啦，想修改一下
+	ALTER TABLE users MODIFY email varchar(30) not null;
+	// 发现字段名不太合适，想修改一下
+	ALTER TABLE users CHANGE email user_email varchar(30) not null;
+	//删除某个字段
+	ALTER TABLE users DROP mobile;
+	// 删除表
+	 drop table users;
+
+#### DML 数据操作语言
