@@ -16,14 +16,14 @@
 
 7.展示数据库，mysql> show databases;
 
-8.更改数据库密码  C:\Users\10468>mysqladmin -uroot -p123456 password 112233
+8.更改数据库密码  C:\Users\10468>mysqladmin -uroot  -p123456 password 112233
 
 9.停止mysql  :        mysqladmin -uroot -p  shutdown
 
 10.ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost' (10061)   mysql没有启动
 
 ### 踩过的坑
-使用 mysql -uroot -p 的时候，在win7中需要输入密码，为了安全性，系统生成一个随机密码，需要找到这个密码。
+使用 mysql -uroot  -p 的时候，在win7中需要输入密码，为了安全性，系统生成一个随机密码，需要找到这个密码。
 [https://blog.csdn.net/hua1011161696/article/details/80666025](https://blog.csdn.net/hua1011161696/article/details/80666025 "点我呀（解决坑的办法）")
 ### 关键字解释
 1. database:关联表的集合      
@@ -64,17 +64,17 @@
 
  2.select user,host,authentication_string from user;
 
-3.create user 'blog'@'%' identified by '123';  //创建用户。
+3.create user 'blog'@'%' identified by '123456';  //创建用户。
 ![](https://i.imgur.com/bKnwbPs.png)
 
 
 #### 数据库相关操作
 	show databases;  // 显示数据库；
-	creacte shop;  //
+	create database shop;  //
 	use shop;  //使用shop数据库
 	drop database shop; //删除shop 数据库
 
-#### 表的相关操作
+#### 表的相关操作DDL
 	use shop;  //需要先进入到某个数据库,切换数据
 	// 创建表
 	create table user(
@@ -100,4 +100,48 @@
 	// 删除表
 	 drop table users;
 
-#### DML 数据操作语言
+#### DML 数据操作语言(插入，修改，删除)
+	0.查看数据
+	// 查看数据
+	SELECT * FROM user; 
+	1.增加数据
+	INSERT INTO user (id,user_name,password) VALUES (1,'zhangsan','123456');
+
+	可以不用加id,因为是自增的
+	INSERT INTO user (user_name,password) VALUES ('zhangsan','123456');
+
+	//可以不加字段，但是字段要一一对应；
+	INSERT INTO user VALUES (4，'zhangsan','123456');
+	// 插入user_name 中文字段保持；
+	
+	2.更新数据
+	UPDATE user SET password=123456;  //把所有数据都改啦。
+	UPDATE user SET password=123456 WHERE id=3;
+	UPDATE user SET password=123456,user_name='zhagnmingyi' WHERE id=3;
+	3.删除数据（要加where 条件）
+
+	DELETE FREOM user WHERE id = 5;
+	DELETE FROM user; //清空表数据，id从最后一个开始
+	TRUNCATE user; //清空表数据，id从1开始
+
+### DCL(数据控制语言)
+	一、查看系统数据库；
+	系统数据库mysql. 
+	1.use mysql;
+	2.show tables; //找到user表；
+	3.select user,host,authentication_string from user;  //可以看到系统用户 root,host,还有密码；
+	
+
+	二、创建一个新的用户，用于管理博客blog数据库。
+	CREATE USER 'blog'@'127.0.0.1' IDENTIFIED BY '123456'；
+	// 所有用户都可以连接，只要知道用户名，密码
+	CREATE USER 'blog'@'%' IDENTIFIED BY '123456'；
+
+	// 刷新权限列表
+	flush privileges;
+ create table blog(
+    -> id int unsigned auto_increment not null primary key,
+    -> title varchar(60) not null,
+    -> time int not null,
+    -> content logtext not null
+    -> );
