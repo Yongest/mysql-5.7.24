@@ -132,8 +132,9 @@
 	3.select user,host,authentication_string from user;  //可以看到系统用户 root,host,还有密码；
 	
 
-	二、创建一个新的用户，用于管理博客blog数据库。
-	CREATE USER 'blog'@'127.0.0.1' IDENTIFIED BY '123456'；
+	二、创建一个新的普通用户blog，允许特定IP访问。
+	CREATE USER 'blog'@'192.168.1.107' IDENTIFIED BY '123456'；
+
 	// 所有用户都可以连接，只要知道用户名，密码
 	CREATE USER 'blog'@'%' IDENTIFIED BY '123456'；
 
