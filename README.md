@@ -254,6 +254,7 @@
 	|  2   |  shanshan   |   fsfsf@qq.com   |   4    |
 
     学生成绩表
+
 	|  id  | stu_id | mark |
     | :--: | :--: | :---: |
     |  1   |  2   |  99   | 
