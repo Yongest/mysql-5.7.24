@@ -273,11 +273,44 @@
 		别名(减少语句长度）
 		select s.name,s.mobile,m.mark,s.id from student as s,mark as m where m.stu_id=s.id and s.name='mingyi';
 		显示的(把两个表中间的逗号去掉换成inner join）
-		select s.name,s.mobile inner join m.mark,s.id from student as s,mark as m where m.stu_id=s.id and s.name='mingyi';
+		select s.name,s.mobile  m.mark,s.id from student as s inner join mark as m where m.stu_id=s.id and s.name='mingyi';
     	在内连接的时候加on 或者where 都可以(on 可以替换where)；
-		select s.name,s.mobile inner join m.mark,s.id from student as s,mark as m on m.stu_id=s.id and s.name='mingyi';
+		select s.name,s.mobile  m.mark,s.id from student as s inner join mark as m on m.stu_id=s.id and s.name='mingyi';
 		join   默认是 inner join （可以不加inner）
+		
+		右连接，以右边的数据为主
+		select s.name,s.mobile,m.mark from student as s right join mark as m on m.stu_id=s.id;
+		左连接，以左边的数据为主
+		select s.name,s.mobile,m.mark from student as s left join mark as m on m.stu_id=s.id;
+		子查询()
+		select * from student where id in(2,3,4);
+		select * from student where id in (select stu_id from mark where id>1);
 
+		联合查询（竖向累加），注意前后字段要一样
+		字段值相同时，会去掉。
+		select id from student union select id from mark;
+		+----+
+		| id |
+		+----+
+		|  1 |
+		|  2 |
+		|  3 |
+		|  4 |
+		|  5 |
+		|  6 |
+		|  7 |
+		|  8 |
+		|  9 |
+		| 10 |
+		| 11 |
+		| 12 |
+		| 13 |
+		| 14 |
+		+----+
+
+		
+		select id from student union all select id from mark;
+		字段值相同时，不会会去掉。
 	1.2 外连接（左连接，右连接）
 
 
