@@ -59,7 +59,7 @@
 
 ![](https://i.imgur.com/lyaOOZ7.png)
 
-### 查看系统数据库密码等
+## 查看系统数据库密码等
  1.use mysql
 
  2.select user,host,authentication_string from user;
@@ -68,13 +68,13 @@
 ![](https://i.imgur.com/bKnwbPs.png)
 
 
-#### 数据库相关操作
+## 数据库相关操作
 	show databases;  // 显示数据库；
 	create database shop;  //
 	use shop;  //使用shop数据库
 	drop database shop; //删除shop 数据库
 
-#### 表的相关操作DDL
+## 表的相关操作DDL
 	use shop;  //需要先进入到某个数据库,切换数据
 	// 创建表
 	create table user(
@@ -100,7 +100,7 @@
 	// 删除表
 	 drop table users;
 
-#### DML 数据操作语言(插入，修改，删除)
+## DML 数据操作语言(插入，修改，删除)
 	0.查看数据
 	// 查看数据
 	SELECT * FROM user; 
@@ -124,7 +124,7 @@
 	DELETE FROM user; //清空表数据，id从最后一个开始
 	TRUNCATE user; //清空表数据，id从1开始
 
-### DCL(数据控制语言)
+## DCL(数据控制语言)
 	一、查看系统数据库；
 	系统数据库mysql. 
 	1.use mysql;
@@ -167,7 +167,7 @@
     7.3 更新密码
     update user set authentication_string = password('123456') where user='root';
 
-### DQL数据查询语言
+## DQL数据查询语言
 	where 条件
 	=
 	!=  <>
@@ -207,7 +207,7 @@
 	聚合函数
 	// 总条数
 	SELECT COUNT(*) FROM user;
-	SELECT COUNT(id) FROM user;  //不准确（中间可能有删除数据）,但经过测试是准确的，字段没有值时，也是查群总条数
+	SELECT COUNT(id) FROM user;  //不准确（中间可能有删除数据）,但经过测试是准确的，字段没有值时，也是查寻总条数
 	
 	求和
 	select sum(age) from user;
@@ -242,7 +242,7 @@
 	|      175 |      1 |
 	+----------+--------+
 
-### 连表查询（连接查询，联合查询，子查询）
+## 连表查询（连接查询，联合查询，子查询）
 1.  连接查询（内连接，外连接<左连接，右连接>，全连接）
 	
 	1.1内连接（笛卡尔积连接）

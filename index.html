@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style>body{background:#f5f5d5}</style>
+
+<script type="text/javascript">
+    function wrapOldContentByDiv() {
+        var oldContentDiv = document.createElement("div");
+        oldContentDiv.style.cssText = "float:right; width:72%; padding-left: 3%; padding-right:3%;border: 2px solid #CACACA;";
+        oldContentDiv.innerHTML = document.body.innerHTML;
+        document.body.style["max-width"] = "100%";
+        document.body.style["margin"] = "20px";
+        document.body.style["padding"] = "0";
+        document.body.innerHTML = '';
+        document.body.appendChild(oldContentDiv);
+    };
+
+    function addDirectorySwitch(directoryDiv) {
+        var directorySwitchP = document.createElement("p");
+        directorySwitchP.style.cssText = "text-align: left; margin: 0;";
+        directoryDiv.appendChild(directorySwitchP);
+
+        var ele_span = document.createElement("span");
+        ele_span.style.cssText = "font-weight: 1000;";
+        var ele_text = document.createTextNode("目录");
+        ele_span.appendChild(ele_text);
+
+        var ele_a = document.createElement("a");
+        ele_a.appendChild(document.createTextNode("[-]"));
+        ele_a.setAttribute("href", "#");
+        ele_a.setAttribute("onclick", "javascript:return switchAllDirectory(this);");
+        ele_a.setAttribute("title", "Click to Open TOC");
+
+        ele_span.appendChild(ele_a);
+        directorySwitchP.appendChild(ele_span);
+    }
+
+    function createTree(parentNode, tags, index, maxLevel) {
+        if (index >= tags.length) {
+            return -1;
+        }
+
+        var lastLevel = -1;
+        for (var i = index; i < tags.length; i++) {
+            var header = tags[i];
+            var level = parseInt(header.tagName.substr(1), 10);
+
+            var childNode = {'tag': header, 'childNodes': [], 'level': level};
+            if (level > parentNode.level) {
+                if (lastLevel > 0 && level > lastLevel) {
+                    // 子子类
+                    index = createTree(parentNode.childNodes[parentNode.childNodes.length - 1], tags, i);
+                    if (index < 0) {
+                        return -1;
+                    } else {
+                        i = index - 1;
+                    }
+                } else {
+                    parentNode.childNodes.push(childNode);
+                    lastLevel = level;
+                }
+            } else if (level <= maxLevel && parentNode.level > maxLevel) {
+                parentNode.childNodes.push(childNode);
+                lastLevel = level;
+            } else {
+                return i;
+            }
+        }
+    }
+
+    function createAElement(tag, index) {
+        var a = document.createElement("a");
+        a.style.cssText = "";
+        a.setAttribute("href", "#" + tag.textContent);
+        a.innerHTML = index.toString() + tag.textContent;
+        return a;
+    }
+
+    function createOlElement() {
+        var ol_el = document.createElement("ol");
+        ol_el.style["line-height"] = "180%";
+        ol_el.style["list-style-type"] = "none";
+        ol_el.style["margin-left"] = "0";
+        return ol_el
+    }
+
+    function createEmptyLiElement() {
+        var emptyLiEle = document.createElement("li");
+        return emptyLiEle
+    }
+
+    function getIndex(parentDirectory, directoryLevel, index) {
+        if (directoryLevel === 0) {
+            return parentDirectory + (index + 1).toString() + "."
+        } else {
+            return parentDirectory + (index + 1).toString() + ".";
+        }
+    }
+
+    function createLeafElement(node, curDirectory) {
+        var liEle = createEmptyLiElement();
+        var aEle = createAElement(node.tag, curDirectory);
+        liEle.appendChild(aEle);
+        return liEle
+    }
+
+    function getArrowDownStyle() {
+        return " width: 0;" +
+            "    height: 0;" +
+            "    position: relative;" +
+            "    margin-right: 8px;" +
+            "    top: 3px;" +
+            "    display: inline-block;" +
+            "    border: 6px outset;" +
+            "    border-color: black transparent transparent transparent;"
+    }
+
+    function getArrowRightStyle() {
+        return " width: 0;" +
+            "    height: 0;" +
+            "    left: 5px;" +
+            "    position: relative;" +
+            "    margin-right: 8px;" +
+            "    display: inline-block;" +
+            "    border: 6px solid;" +
+            "    border-color: transparent transparent transparent black;"
+    }
+
+    /*
+    <ol>
+        <li><a>根节点1</a></li>
+        <li><a>根节点2</a></li>
+        <li>
+            <div>
+                <a><span>[-]</span>根节点3</a>
+                <ol>
+                    <li><a>子节点1</a></li>
+                    <li><a>子节点2</a></li>
+                    <li><a>子节点3</a></li>
+                </ol>
+            </div>
+        </li>
+        <li><a>根节点4</a></li>
+     </ol>
+    * */
+    // node, 1.2.3 4 0
+    function renderTree(node, parentDirectory, directoryLevel, index) {
+        var childNodes = node.childNodes;
+        var tagContent = node.tag.textContent;
+
+        node.tag.setAttribute("id", tagContent);
+
+        var curDirectory = getIndex(parentDirectory, directoryLevel, index);
+        var directoryName = curDirectory + "&nbsp;" + tagContent;
+
+        // 叶子节点
+        if (childNodes.length === 0) {
+            return "<li style='padding-left: 24px;'><a href='#" + tagContent + "'>" + directoryName + "</a></li>"
+    //                return createLeafElement(node, curDirectory)
+        }
+
+        // 非叶子节点
+        var childContent = "";
+        for (var j = 0; j < node.childNodes.length; j++) {
+            childContent += renderTree(node.childNodes[j], curDirectory, directoryLevel + 1, j);
+        }
+
+        return "<li>" +
+            "   <div>" +
+            "      <div>" +
+            "         <div id='" + directoryName + "' class='open' style='" + getArrowDownStyle() + "' onclick='return switchDirectory(this);'></div>" +
+            "         <a href='#" + tagContent + "' ondblclick='return switchByDbClick(this);'>" + directoryName + "</a>" +
+            "      </div>" +
+            "      <ol id='ol-" + directoryName + "' style='line-height: 180%;list-style-type: none; padding-left: 20px;'>" + childContent + "</ol>" +
+            "   </div>" +
+            "</li>";
+
+        /*var liEle = createEmptyLiElement();
+        var aEle = createAElement(node.tag, curDirectory);
+
+        var parentElement = document.createElement("div");
+        parentElement.appendChild(aEle);
+
+        var olElement = createOlElement();
+
+        var tempNode;
+        for (var j = 0; j < node.childNodes.length; j++) {
+            tempNode = node.childNodes[j];
+            var element = renderTree(tempNode, curDirectory, directoryLevel + 1, j);
+            olElement.appendChild(element);
+        }
+        parentElement.appendChild(olElement);
+
+        liEle.appendChild(parentElement);
+        return liEle;*/
+    }
+
+    function switchByDbClick(aEle) {
+        switchDirectory(aEle.parentElement().firstChild)
+    }
+
+    // 开关目录
+    function switchDirectory(ele) {
+        var divEle = ele.parentNode.parentNode;
+        var olEle = divEle.lastElementChild;
+        if (ele.className === "open") {
+            // 关闭
+            olEle.style.cssText = "display:none;line-height: 180%;list-style-type: none; padding-left: 20px";
+            ele.setAttribute("class", "close");
+            ele.style.cssText = getArrowRightStyle();
+        } else if (ele.className === "close") {
+            // 打开
+            olEle.style.cssText = "line-height: 180%;list-style-type: none; padding-left: 20px";
+            ele.setAttribute("class", "open");
+            ele.style.cssText = getArrowDownStyle();
+        }
+    }
+
+    function switchAllDirectory(e) {
+        var rootOlElement = document.getElementById("outline_ol");
+        var ols = rootOlElement.getElementsByTagName("ol");
+        var isOpen = false;
+
+        if (e.innerHTML === '[+]') {
+            e.setAttribute('title', 'collapse');
+            e.innerHTML = '[-]';
+            isOpen = true;
+        } else {
+            e.setAttribute('title', 'expand');
+            e.innerHTML = '[+]';
+        }
+
+
+        for (var i = 0; i < ols.length; i++) {
+            var olEle = ols[i];
+            if (isOpen) {
+                olEle.style.display = "block";
+                olEle.parentNode.firstElementChild.firstElementChild.style.cssText = getArrowDownStyle();
+            } else {
+                olEle.style.display = "none";
+                olEle.parentNode.firstElementChild.firstElementChild.style.cssText = getArrowRightStyle();
+            }
+        }
+
+        e.blur();
+        return false;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1, 将body内容提取到div标签中
+        wrapOldContentByDiv();
+
+        // 2, 创建左边目录列表Div
+        var directoryDiv = document.createElement("div");
+        directoryDiv.setAttribute("id", "outline-list");
+        directoryDiv.style.cssText = "width:20%;height:100%; float:left;font-size:16px,z-index:1;position: fixed;overflow: hidden;";
+
+        // 3, 目录展开折叠开关
+        addDirectorySwitch(directoryDiv);
+
+        // 4, 创建目录列表
+        var directoryOl = document.createElement("ol");
+        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 85%;padding-bottom: 30px; overflow: auto;";
+        directoryOl.setAttribute("id", "outline_ol");
+        directoryDiv.appendChild(directoryOl);
+        var div1 = document.createElement("div");
+        div1.style.cssText = "clear:both";
+
+        // 插入目录
+        document.body.insertBefore(directoryDiv, document.body.childNodes[0]);
+
+        // 5, 获取所有的H标签
+        var hTags = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+        if (hTags.length < 2)
+            return;
+
+        var rootNode = {'tag': directoryOl, 'childNodes': [], 'level': 0};
+        var maxLevel = parseInt(hTags[0].tagName.substr(1), 10);
+        // 6, 创建树形结构
+        createTree(rootNode, hTags, 0, maxLevel);
+
+        // 7, 绘制树结构
+        var htmlContent = "";
+        for (var j = 0; j < rootNode.childNodes.length; j++) {
+    //                var element = renderTree(rootNode.childNodes[j], '', 1, j);
+    //                directoryOl.appendChild(element);
+
+            htmlContent += renderTree(rootNode.childNodes[j], '', 1, j);
+        }
+        directoryOl.innerHTML = htmlContent;
+         var title = document.querySelector('h1').innerHTML
+    document.title= '明一的前端之路之'+title
+    });
+   
+</script>
+</head>
+<body>
+<h2>mysql 是一个软件</h2>
+<p>1.在目录下新建 data目录，新建my.ini 文件
+2.在 my.ini 中 写入
+[mysqld]
+basedir = D:/mysql-5.7.24
+datadir = D:/mysql-5.7.24/data</p>
+<p>3.在cmd中执行D:\mysql-5.7.24\bin\msqld.exe --initialize-insecure   初始化数据库</p>
+<p>4.配置环境变量D:\mysql-5.7.24\bin\</p>
+<p>5.运行mysqld  打开数据库，运行 netstat -ano 可查看其其端口号为3306</p>
+<p>6.连接数据库  mysql  -uroot -p        原密码为空</p>
+<p>7.展示数据库，mysql&gt; show databases;</p>
+<p>8.更改数据库密码  C:\Users\10468&gt;mysqladmin -uroot  -p123456 password 112233</p>
+<p>9.停止mysql  :        mysqladmin -uroot -p  shutdown</p>
+<p>10.ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost' (10061)   mysql没有启动</p>
+<h3>踩过的坑</h3>
+<p>使用 mysql -uroot  -p 的时候，在win7中需要输入密码，为了安全性，系统生成一个随机密码，需要找到这个密码。
+<a href="https://blog.csdn.net/hua1011161696/article/details/80666025" title="点我呀（解决坑的办法）">https://blog.csdn.net/hua1011161696/article/details/80666025</a></p>
+<h3>关键字解释</h3>
+<ol>
+<li>database:关联表的集合</li>
+<li>table :表是数据的矩阵</li>
+<li>coloumn:列/字段，包含相同的数据，字段类型</li>
+<li>row:行（元组，记录），一组相关的数据</li>
+</ol>
+<h2>SQL语句概述</h2>
+<h4>sql(Structured Query Language) 结构化查询语言，是用于访问和处理数据库的标准计算机语言</h4>
+<h3>SQL 规则：</h3>
+<ol>
+<li>必须语句大写，在命令行可以小写</li>
+<li>注释：#   或则 -- 加空格   例如 -- show databases;  多行注释  /**/</li>
+<li>以分号结尾;   修改结尾符号 delimiter //</li>
+</ol>
+<h2>数据类型</h2>
+<p><img src="https://i.imgur.com/sQEbiM5.png" alt="" /></p>
+<p><img src="https://i.imgur.com/n9qHkIH.png" alt="" /></p>
+<p><img src="https://i.imgur.com/8P37Oz7.png" alt="" /></p>
+<p><img src="https://i.imgur.com/AlnjpCa.png" alt="" /></p>
+<p><img src="https://i.imgur.com/w2883BK.png" alt="" />
+<img src="https://i.imgur.com/luZSIiL.png" alt="" />
+<img src="https://i.imgur.com/HVPOHLD.png" alt="" />
+<img src="https://i.imgur.com/ZDHX6hk.png" alt="" />
+<img src="https://i.imgur.com/Vq6FJgD.png" alt="" /></p>
+<p><img src="https://i.imgur.com/7D3e0Pb.png" alt="" /></p>
+<p><img src="https://i.imgur.com/lyaOOZ7.png" alt="" /></p>
+<h2>查看系统数据库密码等</h2>
+<p>1.use mysql</p>
+<p>2.select user,host,authentication_string from user;</p>
+<p>3.create user 'blog'@'%' identified by '123456';  //创建用户。
+<img src="https://i.imgur.com/bKnwbPs.png" alt="" /></p>
+<h2>数据库相关操作</h2>
+<pre><code>show databases;  // 显示数据库；
+create database shop;  //
+use shop;  //使用shop数据库
+drop database shop; //删除shop 数据库
+</code></pre>
+<h2>表的相关操作DDL</h2>
+<pre><code>use shop;  //需要先进入到某个数据库,切换数据
+// 创建表
+create table user(
+id int unsigned auto_increment not null primary key comment '用户id',
+user_name varchar(20) not null default 'admin',
+password char(32) not null comment '用户密码'
+);  //所有字段都加上not null 潜规则
+
+show tables; //查看所有表；
+desc user; //查看表结构；
+show create table user; // 查看创建表user当时的代码。表名，字段名 加了反引号 关键字大写啦（代码里面都是大写）；
+ALTER TABLE user RENAME users;  //表名不合适，更改表名；
+//突然发现少了字段
+ALTER TABLE users ADD email varchar(50) not null comment '用户邮箱';
+//想添加个字段到email 前面
+ALTER TABLE users ADD mobile char(11) not null AFTER password;
+// 发现email 数据长度太大啦，想修改一下
+ALTER TABLE users MODIFY email varchar(30) not null;
+// 发现字段名不太合适，想修改一下
+ALTER TABLE users CHANGE email user_email varchar(30) not null;
+//删除某个字段
+ALTER TABLE users DROP mobile;
+// 删除表
+ drop table users;
+</code></pre>
+<h2>DML 数据操作语言(插入，修改，删除)</h2>
+<pre><code>0.查看数据
+// 查看数据
+SELECT * FROM user; 
+1.增加数据
+INSERT INTO user (id,user_name,password) VALUES (1,'zhangsan','123456');
+
+可以不用加id,因为是自增的
+INSERT INTO user (user_name,password) VALUES ('zhangsan','123456');
+
+//可以不加字段，但是字段要一一对应；
+INSERT INTO user VALUES (4，'zhangsan','123456');
+// 插入user_name 中文字段保持；
+
+2.更新数据
+UPDATE user SET password=123456;  //把所有数据都改啦。
+UPDATE user SET password=123456 WHERE id=3;
+UPDATE user SET password=123456,user_name='zhagnmingyi' WHERE id=3;
+3.删除数据（要加where 条件）
+
+DELETE FREOM user WHERE id = 5;
+DELETE FROM user; //清空表数据，id从最后一个开始
+TRUNCATE user; //清空表数据，id从1开始
+</code></pre>
+<h2>DCL(数据控制语言)</h2>
+<pre><code>一、查看系统数据库；
+系统数据库mysql. 
+1.use mysql;
+2.show tables; //找到user表；
+3.select user,host,authentication_string from user;  //可以看到系统用户 root,host,还有密码；
+
+
+二、创建一个新的普通用户blog，允许特定IP访问。
+CREATE USER 'blog'@'192.168.1.107' IDENTIFIED BY '123456'；
+
+// 所有用户都可以连接，只要知道用户名，密码
+CREATE USER 'blog'@'%' IDENTIFIED BY '123456'；
+
+// 刷新权限列表
+flush privileges;
+</code></pre>
+<p>create table blog(
+-&gt; id int unsigned auto_increment not null primary key,
+-&gt; title varchar(60) not null,
+-&gt; time int not null,
+-&gt; content logtext not null
+-&gt; );</p>
+<pre><code>三、给blog 用户授权。
+1.授权（*.*  授权所有数据库，表）（GRANT ALL ON *.* TO 'blog'@'192.168.1.107'; //授所有权限，上线时，可以给用户回收大部分权限）
+GRANT insert,update,delete ON blog.* TO 'blog'@'192.168.1.107';  //*代表blog 数据库所有的表
+2.查看权限
+在root用户里面查看权限
+SHOW GRANTS FOR blog@192.168.1.107;  //注意blog ip 不要加引号。
+3.回收权限
+REVOKE insert,update ON 数据库名.* FROM 用户名 @IP地址或者% ;
+4.创建用户，并且授权
+grant all on shop.* to 'shop'@'192.168.1.107' identified by '123456'; //只给了shop表权限
+5.删除用户。
+drop user 用户名@'192.168.1.107'；
+6.修改密码
+mysqladmin -uroot -p112233 password 123456;
+7.忘记密码怎么办？
+7.1 先在后台停啦mysql 服务，
+7.2 运行 mysqld --skip-grant-tables;
+7.3 更新密码
+update user set authentication_string = password('123456') where user='root';
+</code></pre>
+<h2>DQL数据查询语言</h2>
+<pre><code>where 条件
+=
+!=  &lt;&gt;
+&lt;   &gt;   &lt;=    &gt;=
+OR 或者 ||
+AND 且 &amp;&amp; 
+BETWEEN 5 AND 10
+NOT IN 
+like '$值$'  左模糊，右模糊  全模糊
+
+where age between 30 and 37;
+where age in (30,37);
+where age not in (30,37);
+where user_name like '%n%';
+where user_name like 'n%';
+where user_name like '%n';
+
+select * from user *性能不好，用哪个查哪个；
+查询时，改字段的名字（别名,alias），
+select user_name as username,user_emai from user;
+
+连接字段
+select concat(user_name,age) as name_age from user;
+连接字段分隔符
+select concat_ws('==',user_name,age) as name_age from user;
+去除重复的
+select distinct user_name from user;
+限制条数（限制2条）
+select * from user limit 2;
+两个参数,第二条开始，查询3条（分页功能）
+select * from user limit 1,3;
+
+排序（降序）
+select * from user order by id desc;
+排序（升序）
+select * from user order by id asc;
+聚合函数
+// 总条数
+SELECT COUNT(*) FROM user;
+SELECT COUNT(id) FROM user;  //不准确（中间可能有删除数据）,但经过测试是准确的，字段没有值时，也是查寻总条数
+
+求和
+select sum(age) from user;
+求平均值
+select avg(age) from user;
+求最大值
+select max(age) from user;
+select min(age) from user;
+分组
+select gender from user group by gender;
+统计男女人数
+select count(id) ,gender from user group by gender;
+统计分组中，数量大于5的分组
+select count(id) ,gender from user group by gender having count(id);
+统计男女年龄平均值，
+select avg(age),gender from user group by gender;
+统计男女年龄最大值
+select max(age),gender from user group by gender;
+先按性别分组，然后查出分组中数据条数大于5条的人数。
+select count(age) ,gender from user group by  gender having count(age)&gt;5;
++------------+--------+
+| count(age) | gender |
++------------+--------+
+|          7 |      1 |
++------------+--------+
+先按性别分组，然后查出分组中年龄总和大于100的人数。
+select sum(age) ,gender from user group by  gender having sum(age)&gt;100
++----------+--------+
+| sum(age) | gender |
++----------+--------+
+|      103 |      0 |
+|      175 |      1 |
++----------+--------+
+</code></pre>
+<h2>连表查询（连接查询，联合查询，子查询）</h2>
+<ol>
+<li>
+<p>连接查询（内连接，外连接&lt;左连接，右连接&gt;，全连接）</p>
+<p>1.1内连接（笛卡尔积连接）
+学生信息表</p>
+<p>|  id  | name | email | mobile |
+| :--: | :--: | :---: | :----: |
+|  1   |  mingyi   |   3798@qq.com   |   4    |
+|  2   |  shanshan   |   fsfsf@qq.com   |   4    |</p>
+<p>学生成绩表</p>
+<p>|  id  | stu_id | mark |
+| :--: | :--: | :---: |
+|  1   |  2   |  99   |
+|  2   |  1   |  100  |</p>
+<pre><code>内连接查询 inner join(显示的和隐式的）
+(笛卡尔积）
+select * from student,mark;
+select * from student,mark where student.id=mark.stu_id;
+select * from student,mark where student.id=mark.stu_id and student.name='mingyi' ;
++----+--------+----------------+--------+----+--------+------+
+| id | name   | email          | mobile | id | stu_id | mark |
++----+--------+----------------+--------+----+--------+------+
+|  2 | mingyi | 1023434@qq.com | 23434  |  2 |      2 |  100 |
++----+--------+----------------+--------+----+--------+------+
+别名(减少语句长度）
+select s.name,s.mobile,m.mark,s.id from student as s,mark as m where m.stu_id=s.id and s.name='mingyi';
+显示的(把两个表中间的逗号去掉换成inner join）
+select s.name,s.mobile  m.mark,s.id from student as s inner join mark as m where m.stu_id=s.id and s.name='mingyi';
+在内连接的时候加on 或者where 都可以(on 可以替换where)；
+select s.name,s.mobile  m.mark,s.id from student as s inner join mark as m on m.stu_id=s.id and s.name='mingyi';
+join   默认是 inner join （可以不加inner）
+
+右连接，以右边的数据为主
+select s.name,s.mobile,m.mark from student as s right join mark as m on m.stu_id=s.id;
+左连接，以左边的数据为主
+select s.name,s.mobile,m.mark from student as s left join mark as m on m.stu_id=s.id;
+子查询()
+select * from student where id in(2,3,4);
+select * from student where id in (select stu_id from mark where id&gt;1);
+
+联合查询（竖向累加），注意前后字段要一样
+字段值相同时，会去掉。
+select id from student union select id from mark;
++----+
+| id |
++----+
+|  1 |
+|  2 |
+|  3 |
+|  4 |
+|  5 |
+|  6 |
+|  7 |
+|  8 |
+|  9 |
+| 10 |
+| 11 |
+| 12 |
+| 13 |
+| 14 |
++----+
+</code></pre>
+</li>
+</ol>
+<pre><code>    select id from student union all select id from mark;
+    字段值相同时，不会会去掉。
+1.2 外连接（左连接，右连接）
+</code></pre>
+<p>​
+如何给表增加一个字段。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
