@@ -89,8 +89,9 @@
 	user_name varchar(20) not null default 'admin',
 	gender enum('male','female','other') default 'other' not null, 
         height decimal(5,2) not null,
-	password char(32) not null comment '用户密码'
-	);  //所有字段都加上not null 潜规则
+	password char(32) not null comment '用户密码',
+	is_delete bit defualt 0
+	);  //所有字段都加上not null 潜规则,  0或1 的时候用bit
 	
 	show tables; //查看所有表；
 	desc user; //查看表结构；
