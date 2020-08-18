@@ -22,6 +22,13 @@
 
 10.ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost' (10061)   mysql没有启动
 
+11.  select version();  // 查看当前数据库版本
+
+12.  select now();  // 查看当前数据库时间
+
+13. mysql  引擎（InnoDB）支持事务与行级锁。
+
+
 ### 踩过的坑
 使用 mysql -uroot  -p 的时候，在win7中需要输入密码，为了安全性，系统生成一个随机密码，需要找到这个密码。
 [https://blog.csdn.net/hua1011161696/article/details/80666025](https://blog.csdn.net/hua1011161696/article/details/80666025 "点我呀（解决坑的办法）")
@@ -80,6 +87,8 @@
 	create table user(
 	id int unsigned auto_increment not null primary key comment '用户id',
 	user_name varchar(20) not null default 'admin',
+	gender enum('male','female','other') default 'other' not null, 
+        height decimal(5,2) not null,
 	password char(32) not null comment '用户密码'
 	);  //所有字段都加上not null 潜规则
 	
@@ -101,6 +110,10 @@
 	 drop table users;
 
 ## DML 数据操作语言(插入，修改，删除)
+	0.// 枚举可以用数字1,2,3 代替。插入数据。
+	0.  INSERT INTO user (id,user_name,password) VALUES (1,'zhangsan','123456'),(2,'zhangsan','123456');  // 插入多条
+	0.主键可以用null, 0  等替换插入
+	
 	0.查看数据
 	// 查看数据
 	SELECT * FROM user; 
@@ -123,6 +136,8 @@
 	DELETE FREOM user WHERE id = 5;
 	DELETE FROM user; //清空表数据，id从最后一个开始
 	TRUNCATE user; //清空表数据，id从1开始
+	
+	 增加is_delete 字段 默认  byte 0 表示不删除，若为1表示删除
 
 ## DCL(数据控制语言)
 	一、查看系统数据库；
@@ -144,6 +159,8 @@
     -> id int unsigned auto_increment not null primary key,
     -> title varchar(60) not null,
     -> time int not null,
+    -> gender enum('male','female','other') default 'other' not null,
+    -> height decimal(5,2) not null,
     -> content logtext not null
     -> );
     
